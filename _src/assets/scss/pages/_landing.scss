@@ -69,13 +69,13 @@
     border: 1px solid $faded-orange ;
     border-radius: 5px;
     width: 268px;
-    height: 74px;
+    height: 80px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;  
     .ldng-icon {
         color: $dull-orange;
-        height: 26px;
+        font-size: rem(26);
         @include for-tablet-up{
             height: 29px;
         }
