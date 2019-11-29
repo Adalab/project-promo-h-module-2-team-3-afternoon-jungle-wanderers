@@ -1,0 +1,328 @@
+.hidden{
+    display: none; 
+}
+.opacity {
+    opacity: 0.6;
+}
+.main{
+    background-image: linear-gradient(to bottom, #f5f5f5, $white-full 9%);
+    height: 80%;
+}
+
+.preview{
+    background: url('../images/leavesBackground.jpg') no-repeat;
+    background-size: cover;
+    height: 80vh;
+    //overflow: hidden;
+    border: 3px solid $dark-green-blue;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+        
+    &_card-container{
+        height: 400px;
+        width: 270px;
+        border-radius: 8px;
+        background-color: $dark-green-blue-transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+    }
+    .reset{
+        width: 75px;
+        height: 30px;
+        margin-top: 40px;
+        align-self: center;
+        transform: translateX(-85px);
+        border: solid 1px $white-full;
+        border-radius: 15px;
+        background-color: $silver;
+        font-family: $openSans-font;
+        font-size: 0.75rem;
+        line-height: 20px;
+        color: $gunmetal;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        &:hover {
+            border: solid 2px $dark-green-blue;
+            color: $dark-green-blue;
+            box-shadow: 0 0 25px $white-full;
+        }
+    }
+    
+    &_card{
+        margin: 20px 30px 40px 30px;
+        background-color: $white-full;
+        width: 240px;
+        height: 329px;
+
+        &-head{
+            margin-top: 23px;
+            margin-bottom: 10px;
+            border-left: 5px solid $dirty-blue;
+        }
+
+        &-name{
+            text-transform: capitalize;
+            font-family: $montserrat-font;
+            font-weight: $bold-weight;
+            font-size: 1.125rem;
+            line-height: 20px;
+            color: $dark-green-blue;
+            padding-left: 20px;
+            margin-top: 0px;
+            margin-bottom: 2px;
+        }
+        
+        &-job{
+            font-family: $montserrat-font;
+            font-weight: $regular-weight;
+            font-size: 1rem;
+            line-height: 20px;
+            color: $gunmetal;
+            padding-left: 20px;
+            margin-top: 2px;
+            margin-bottom: 0px;
+        }
+        &-image {
+            background: url('../images/portrait.jpg') top center no-repeat;
+            background-size: cover;
+            width: 240px;
+            height: 200px;
+        }
+        &-social{
+            display: flex;
+            flex-direction: row;
+            align-content: flex-start;
+            justify-content: center;
+            height: 50px;
+            padding-right: 62px;
+            padding-left: 20px;
+            margin-top: 7px;
+
+            .item{
+                height: 32px;
+
+                &_btn{
+                    border: solid 2px $hospital-green;
+                    border-radius: 50%;
+                    width: 32px;
+                    height: 32px;
+                    margin: 0px 5px 15px 5px;
+                    color: $dark-green-blue;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+
+
+.form_wrapper{
+    margin: 0px 20px;
+    align-self: center;
+    padding-top: 15px;
+}
+.fieldset{
+    border-bottom: 1px solid $white-two;
+    
+}
+.form_title-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.form_title{
+    @include text-open-18-600;
+    color: $gunmetal;
+    margin: 12px 0;
+
+    &-icon{
+        color: $dull-orange;
+        margin-right: 10px;
+    }
+}
+
+.fa-chevron-down{
+    color: $gunmetal;
+}
+.color{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &_title{
+        @include text-open-14;
+        color: $gunmetal;
+    }
+}
+.color_theme{
+    display: inline-flex;
+    .item{
+        width: 30px;
+        height: 25px;
+        display: inline-block;
+    }
+}
+.palette-container{
+    padding-bottom: 10px;
+}
+#fieldset__design--{
+    &palette-1, &palette-2, &palette-3{
+        vertical-align: 30%;
+    }
+}
+#github {
+    margin-bottom: 34px;
+}
+
+.palette1-{
+    &c1{background-color: $dark-green-blue;}
+    &c2{background-color: $dirty-blue;}
+    &c3{background-color: $hospital-green;}
+}
+.palette2-{
+    &c1{background-color: $dried-blood;}
+    &c2{background-color: $rusty-red;}
+    &c3{background-color: $tomato;}
+}
+.palette3-{
+    &c1{background-color: $slate;}
+    &c2{background-color: $faded-orange;}
+    &c3{background-color: $light-grey-blue;}
+}
+
+.input_label{
+    @include text-open-14;
+    color: $dark-green-blue;
+    display: block;
+    margin: 20px auto 7px;
+}
+.input{
+    width: 100%;
+    padding-left: 10px;
+    @include text-open-14;
+    border: solid 1px $hospital-green;
+}
+.photo{
+    display: none;
+}
+.add-image-container{
+    display: flex;
+}
+.btn-add-image{
+    width: 140px;
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 4px 0 $black-32;
+    background-color: $dull-orange;
+    @include text-open-14;
+    color: $white-full;
+}
+.preview-image{
+    width: 30px;
+    height: 30px;
+    background: top center no-repeat;
+    background-size: cover;
+    border: solid 1px $hospital-green;
+    display: inline-block;
+    margin-left: 20px;
+}
+.share{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.create_card{
+    width: 100%;
+    border-bottom: 1px solid $white-two;
+    display: flex;
+    justify-content: center;
+
+    &-btn{
+        width: 199px;
+        height: 50px;
+        margin: 25px 0px 35px;
+        border-radius: 12px;
+        box-shadow: 0 1px 6px 0 $black-32;
+        background-color: $dull-orange;
+        color: $white-full;
+        cursor: pointer;
+        &:hover{
+            transform: scale(1.05);
+            box-shadow: 0 1px 15px 0 rgba(0, 0, 0, 0.32);
+        }
+        &:disabled{
+            background-color: $black-32;
+            pointer-events: none;
+        }
+    }
+}
+.twitter{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid $white-two;
+    &-message{
+        margin-top: 20px;
+        margin-bottom: 10px;
+        @include text-open-18-600;
+        color: $gunmetal;
+    }
+    &-btn{
+        width: 185px;
+        height: 33px;
+        display: block;
+        padding-top: 5px;
+        border-radius: 5px;
+        box-shadow: 0 0 4px 0 $black-32;
+        background-color: $azure;
+        @include text-open-14;
+        color: #ffffff;
+        text-align: center;
+        margin: 20px auto 30px;
+        &:hover{
+            transform: scale(1.05);
+        }
+    }
+}
+
+/*JS classes*/
+.hidden{
+    display: none;
+}
+.darkGreenBlue{
+    color: $dark-green-blue;
+}
+.driedBlood{
+    color: $dried-blood;
+}
+.slate{
+    color: $slate;
+}
+.rotate{
+    transform: rotate(180deg);
+}
+.borderPalette1{
+    border-left: 5px solid $dirty-blue;
+}
+.borderPalette2{
+    border-left: 5px solid $rusty-red;
+}
+.borderPalette3{
+    border-left: 5px solid $faded-orange;
+}

@@ -1,0 +1,13 @@
+.page__header {
+    width: 100%;
+}
+.image__header {
+    max-width: 201px;
+    margin-left: 40px;
+    height: 10%;
+
+    @include for-tablet-up{
+        margin-left: 60px;
+    }
+}
+

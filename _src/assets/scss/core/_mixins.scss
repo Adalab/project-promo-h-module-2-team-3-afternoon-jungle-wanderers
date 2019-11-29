@@ -1,0 +1,21 @@
+//Typography
+@mixin text-open-14 {
+  font-family: $openSans-font;
+  font-size: 0.875 rem;
+  line-height: 1.43;
+}
+@mixin text-open-18-600 {
+  font-family: $openSans-font;
+  font-size: 1.125 rem;
+  font-weight: $semiBold-weight;
+}
+
+//Media Queries
+@mixin for-tablet-up {
+    @media (min-width: 768px) { @content; }
+  }
+
+@mixin for-desktop-up {
+  @media (min-width: 1024px) { @content; }
+} 
+
