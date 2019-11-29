@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Awesome Profile Cards</title>
+        <link rel="icon" href="./favicon.png" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:900|Montserrat:400,700|Open+Sans:400,600&display=swap"
+        rel="stylesheet">
+        <script src="https://kit.fontawesome.com/bf82408d8a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./assets/css/main.css" />
+    </head>
+    
+    <body>
+        <div class="page">
+            <header class="page__header">
+                <div>
+                    <img class="image__header" src="./assets/images/logo-awesome-profiles.svg"
+                    alt="Awesome profile-cards" />
+                </div>
+            </header>
+            <main class="main">
+                <section class="preview">
+                    <div class="preview_card-container">
+                        <button id="buttonReset" class="reset"><i class="far fa-trash-alt"></i>reset</button>
+                        <div class="preview_card">
+                            <div class="preview_card-head">
+                                 <h2 class="preview_card-name">nombre apellido</h2>
+
+                                 <h3 class="preview_card-job">Front-end developer</h3>
+
+                            </div>
+                            <div class="preview_card-image js__profile-image"></div>
+                            <ul class="preview_card-social">
+                                <li class="item item_phone opacity"> <a class="item_btn" id="phone-icon">
+                            <i class="fas fa-mobile-alt" id="preview_card-icons"></i>
+                        </a>
+
+                                </li>
+                                <li class="item item_email opacity"> <a class="item_btn" id="email-icon">
+                            <i class="far fa-envelope" id="preview_card-icons"></i>
+                        </a>
+
+                                </li>
+                                <li class="item item_linkedin opacity"> <a class="item_btn" id="linkedin-icon" target="_blank">
+                            <i class="fab fa-linkedin-in" id="preview_card-icons"></i>
+                        </a>
+
+                                </li>
+                                <li class="item item_github opacity"> <a class="item_btn" id="github-icon" target="_blank">
+                            <i class="fab fa-github-alt" id="preview_card-icons"></i>
+                        </a>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <form action="https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/"
+                name="form" method="post" class="form_wrapper">
+                    <fieldset class="fieldset fieldset__design">
+                        <div id="designContainer" class="form_title-container">
+                            <legend class="form_title"><i class="far fa-object-ungroup form_title-icon"></i>DISEÑA</legend>
+                            <span
+                            class="arrowDesign" id="arrowDesign"><i class="fas fa-chevron-down"></i>
+
+                                </span>
+                        </div>
+                        <div class="design" id="design">
+                            <div class="color">
+                                <p class="color_title">COLORES</p>
+                                <div class="color_palettes">
+                                    <div class="palette-container">
+                                        <label for="fieldset__design--palette-1"></label>
+                                        <input type="radio" name="color-palette" id="fieldset__design--palette-1"
+                                        class="palette-1" value="1" checked="checked">
+                                        <ul class="color_theme">
+                                            <li class="palette1-c1 item"></li>
+                                            <li class="palette1-c2 item"></li>
+                                            <li class="palette1-c3 item"></li>
+                                        </ul>
+                                    </div>
+                                    <div class="palette-container">
+                                        <label for="fieldset__design--palette-2"></label>
+                                        <input type="radio" name="color-palette" id="fieldset__design--palette-2"
+                                        class="palette-2" value="2">
+                                        <ul class="color_theme">
+                                            <li class="palette2-c1 item"></li>
+                                            <li class="palette2-c2 item"></li>
+                                            <li class="palette2-c3 item"></li>
+                                        </ul>
+                                    </div>
+                                    <div class="palette-container">
+                                        <label for="fieldset__design--palette-3"></label>
+                                        <input type="radio" name="color-palette" id="fieldset__design--palette-3"
+                                        class="palette-3" value="3">
+                                        <ul class="color_theme">
+                                            <li class="palette3-c1 item"></li>
+                                            <li class="palette3-c2 item"></li>
+                                            <li class="palette3-c3 item"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="fieldset fieldset__fill-out">
+                        <div id="fillInContainer" class="form_title-container">
+                            <legend class="form_title"><i class="far fa-keyboard form_title-icon"></i>RELLENA</legend> <span id="arrowFillIn"><i class="fas fa-chevron-down"></i></span>
+
+                        </div>
+                        <div class="fill-in" id="fillIn">
+                            <label class="input_label" for="name">Nombre completo *</label>
+                            <input id="name" class="input" placeholder="Nombre Apellido"
+                            type="text" name="name" required>
+                            <label class="input_label" for="job-title">Puesto *</label>
+                            <input id="job-title" class="input" placeholder="Front-end developer"
+                            type="text" name="job-title" required>
+                            <label class="input_label" for="photo">Imagen de perfil *</label>
+                            <input id="photo" type="file" name="photo" class="photo js__profile-upload-btn"
+                            value="Añadir imagen" required>
+                            <div class="add-image-container">
+                                <button type="button" class="btn-add-image js__profile-trigger">Añadir imagen</button>
+                                <div class="preview-image js__profile-preview"></div>
+                            </div>
+                            <label class="input_label" for="email">Email *</label>
+                            <input id="email" class="input" placeholder="nombre.apellido@gmail.com"
+                            type="email" name="email" required>
+                            <label class="input_label" for="tel">Teléfono</label>
+                            <input id="tel" class="input" placeholder="123456789"
+                            type="tel" name="tel">
+                            <label class="input_label" for="linkedin">LinkedIn *</label>
+                            <input id="linkedin" class="input" placeholder="www.linkedin.com/in/n-apellido"
+                            type="text" name="linkedin" required>
+                            <label class="input_label" for="github">Github *</label>
+                            <input id="github" class="input" placeholder="n.apellido"
+                            type="text" name="github" required>
+                        </div>
+                    </fieldset>
+                    <fieldset class="fieldset fieldset__share">
+                        <div id="shareContainer" class="form_title-container">
+                            <legend class="form_title"><i class="fas fa-share-alt form_title-icon"></i>COMPARTE</legend>
+                            <span
+                            id="arrowShare"><i class="fas fa-chevron-down"></i>
+
+                                </span>
+                        </div>
+                        <div class="share" id="share">
+                            <div class="create_card">
+                                <button type="submit" value="submit" id="createCardButton" class="create_card-btn"><i class="far fa-address-card"> CREAR TARJETA</i>
+
+                                </button>
+                            </div>
+                            <div class="twitter" id="twitterContainer"> <span class="twitter-message" id="twitterMessage">La tarjeta ha sido creada:</span>
+
+                                <a
+                                href="" class="twitter-btn" id="twitterBtn"><i class="fab fa-twitter"></i>Compartir en twitter</a>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </main>
+            <footer class="footer__container">
+                <p class="footer__copyright">Awesome profile-cards @2019</p>
+                <div class="footer__logo-container"> <a href="https://adalab.es" target="_blank"><img class="footer__logo" src="./assets/images/logo-adalab.png" alt="Adalab Logo"></a>
+
+                </div>
+            </footer>
+        </div>
+        <script type="text/javascript" src="./assets/js/main.js"></script>
+    </body>
+
+</html>
