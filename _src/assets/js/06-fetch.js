@@ -33,7 +33,7 @@ function showURL(data) {
     twitterURL.innerHTML = `<a class="twitter-url" href=${data.cardURL} style="color:#e17334" target="_blank">${data.cardURL}</a>`;
     twitterMessage.insertAdjacentElement('afterend', twitterURL);
     twitterContainer.classList.remove('hidden');
-    createCardButton.setAtributte('disabled', 'disabled');
+    createCardButton.setAttribute('disabled', true);
     shareTwitter(data.cardURL);
   } else {
     twitterURL.innerHTML = 'ERROR' + data.error;
