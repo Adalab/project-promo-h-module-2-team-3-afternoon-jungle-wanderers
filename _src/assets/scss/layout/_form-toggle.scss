@@ -204,6 +204,11 @@
     &c2{background-color: $faded-orange;}
     &c3{background-color: $light-grey-blue;}
 }
+.palette4-{
+    &c1{background-color: $jungle-green;}
+    &c2{background-color: $jungle-yellow;}
+    &c3{background-color: $jungle-orange;}
+}
 
 .input_label{
     @include text-open-14;
@@ -314,6 +319,9 @@
 .slate{
     color: $slate;
 }
+.jungleGreen{
+    color: $jungle-green;
+}
 .rotate{
     transform: rotate(180deg);
 }
@@ -325,4 +333,7 @@
 }
 .borderPalette3{
     border-left: 5px solid $faded-orange;
+}
+.borderPalette4{
+    border-left: 5px solid $jungle-yellow;
 }

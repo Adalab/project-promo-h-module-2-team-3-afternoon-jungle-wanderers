@@ -29,6 +29,7 @@ function sendForm(event) {
 }
 function showURL(data) {
   const twitterURL = document.createElement('span');
+  twitterURL.style.textAlign = 'center';
   if (data.success) {
     twitterURL.innerHTML = `<a class="twitter-url" href=${data.cardURL} style="color:#e17334" target="_blank">${data.cardURL}</a>`;
     twitterMessage.insertAdjacentElement('afterend', twitterURL);
@@ -42,7 +43,6 @@ function showURL(data) {
 function shareTwitter(url) {
   const twitterText = encodeURIComponent('He creado esta tarjeta con Awesome Profile Cards. ¡Échale un vistazo!');
   const twitterHashtag = encodeURIComponent('adalab,adalaber,frontEnd,awesomeCards');
-  const twitterLink = `https://twitter.com/intent/tweet?text=${url}`;
   twitterBtn.href = `https://twitter.com/intent/tweet?text=${twitterText}&url=${url}&hashtags=${twitterHashtag}`;
 }
 

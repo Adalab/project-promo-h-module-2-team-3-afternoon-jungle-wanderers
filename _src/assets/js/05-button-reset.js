@@ -14,8 +14,8 @@ const resetLocalStorage = () => {
 }
 
 const resetColorPalette = () => {
-    applyPalette1();
-    palette1.checked = true;
+    applyPalette4();
+    palette4.checked = true;
 }
 
 const resetName = () => {

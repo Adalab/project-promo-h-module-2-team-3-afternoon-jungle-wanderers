@@ -1,3 +1,4 @@
+// eslint-disable-next-line semi
 'use strict'
 
 const designContainer = document.querySelector('#designContainer');
@@ -14,6 +15,8 @@ const share = document.querySelector('#share');
 const palette1 = document.querySelector('#fieldset__design--palette-1');
 const palette2 = document.querySelector('#fieldset__design--palette-2');
 const palette3 = document.querySelector('#fieldset__design--palette-3');
+const palette4 = document.querySelector('#fieldset__design--palette-4');
+
 let paletteChosen = '';
 
 const userName = document.querySelector('#name');
