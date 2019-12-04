@@ -14,12 +14,12 @@
     background-size: cover;
     height: 80vh;
     //overflow: hidden;
-    border: 3px solid $dark-green-blue;
-    border-radius: 8px;
+    border-bottom: 3px solid $dark-green-blue;
+    border-top: 3px solid $dark-green-blue;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+       
         
     &_card-container{
         height: 400px;
