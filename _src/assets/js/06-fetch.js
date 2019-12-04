@@ -1,5 +1,18 @@
 'use strict'
 
+function checkFilledInputs() {
+  for (const input of inputElements) {
+    if (input.value === '') {
+      createCardButton.disabled = true;
+      errorMessage.classList.remove('hidden');
+
+    } else {
+      createCardButton.disabled = false;
+      errorMessage.classList.add('hidden');
+    }
+  }
+}
+
 function sendForm(event) {
   event.preventDefault();
 

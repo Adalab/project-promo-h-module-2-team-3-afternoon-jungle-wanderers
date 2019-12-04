@@ -256,6 +256,7 @@
     width: 100%;
     border-bottom: 1px solid $white-two;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
     &-btn{
@@ -266,6 +267,7 @@
         box-shadow: 0 1px 6px 0 $black-32;
         background-color: $dull-orange;
         color: $white-full;
+        align-self: center;
         cursor: pointer;
         &:hover{
             transform: scale(1.05);
@@ -274,6 +276,7 @@
         &:disabled{
             background-color: $black-32;
             pointer-events: none;
+            align-self: center;
         }
     }
 }
