@@ -74,6 +74,10 @@ userEmail.addEventListener('keyup', addEmail);
 userLinkedin.addEventListener('keyup', addLinkedin);
 userGithub.addEventListener('keyup', addGithub);
 
+//FORM VALIDATION
+
+
+
 
 function getPersData() {
     getPalette();
