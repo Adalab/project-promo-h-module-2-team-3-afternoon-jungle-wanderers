@@ -14,7 +14,6 @@ function hideDesign() {
     arrowDesign.classList.toggle('rotate');
     arrowFillIn.classList.remove('rotate');
     arrowShare.classList.remove('rotate');
-
 }
 designContainer.addEventListener('click', hideDesign);
 
@@ -25,7 +24,6 @@ function toggleFillIn() {
     arrowDesign.classList.remove('rotate');
     arrowFillIn.classList.toggle('rotate');
     arrowShare.classList.remove('rotate');
-
 }
 fillInContainer.addEventListener('click', toggleFillIn);
 
@@ -37,6 +35,6 @@ function toggleShare() {
     arrowDesign.classList.remove('rotate');
     arrowFillIn.classList.remove('rotate');
 }
-shareContainer.addEventListener('click', toggleShare);
+shareContainer.addEventListener('click', validateCompletingFields);
 
 twitterContainer.classList.add('hidden');
