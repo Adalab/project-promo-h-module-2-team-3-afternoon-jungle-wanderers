@@ -128,7 +128,6 @@
 }
 
 
-
 .form_wrapper{
     margin: 0px 20px;
     align-self: center;
@@ -159,10 +158,11 @@
 .fa-chevron-down{
     color: $gunmetal;
 }
-.color{
+.color, .fonts{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 10px;
 
     &_title{
         @include text-open-14;
@@ -180,10 +180,32 @@
 .palette-container{
     padding-bottom: 10px;
 }
+.font_families{
+    display: flex;
+    flex-direction: column; 
+}
+.font-container{
+    padding: 10px 0 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-self: flex-start;
+}
 #fieldset__design--{
-    &palette-1, &palette-2, &palette-3{
+    &palette-1, &palette-2, &palette-3, &palette-4{
         vertical-align: 30%;
     }
+}
+.font-montserrat{
+    @include text-montserrat-16-400;
+    margin-left: 5px;
+}
+.font-cherry{
+    @include text-cherry-16-400;
+    margin-left: 5px;
+}
+.font-kalam{
+    @include text-kalam-16-400;
+    margin-left: 5px;
 }
 #github {
     margin-bottom: 34px;
@@ -336,4 +358,32 @@
 }
 .borderPalette4{
     border-left: 5px solid $jungle-yellow;
+}
+.fontMontserratRegular{
+    font-family: 'Montserrat', sans-serif;
+    font-size: rem(16);
+}
+.fontMontserratBold{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: rem(18);
+}
+.fontCherrySwashRegular{
+    font-family: 'Cherry Swash', cursive;
+    font-size: rem(16);
+}
+.fontCherrySwashBold{
+    font-family: 'Cherry Swash', cursive;
+    font-weight: 700;
+    font-size: rem(18);
+}
+.fontKalamRegular{
+    font-family: 'Kalam', cursive;
+    font-size: rem(18);
+}
+.fontKalamBold{
+    font-family: 'Kalam', cursive;
+    font-weight: 700;
+    font-size: rem(20);
+
 }

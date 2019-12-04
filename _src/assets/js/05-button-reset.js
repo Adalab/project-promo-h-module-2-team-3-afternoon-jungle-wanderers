@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const reseterButton = document.querySelector('#buttonReset');
 
@@ -14,8 +14,8 @@ const resetLocalStorage = () => {
 }
 
 const resetColorPalette = () => {
-    applyPalette4();
-    palette4.checked = true;
+    applyPalette1();
+    palette1.checked = true;
 }
 
 const resetName = () => {

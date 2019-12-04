@@ -1,15 +1,34 @@
 //Typography
 @mixin text-open-14 {
   font-family: $openSans-font;
-  font-size: 0.875 rem;
+  font-size: 0.875rem;
   line-height: 1.43;
 }
 @mixin text-open-18-600 {
   font-family: $openSans-font;
-  font-size: 1.125 rem;
+  font-size: 1.125rem;
   font-weight: $semiBold-weight;
 }
-
+@mixin text-montserrat-18-700 {
+  font-family: $montserrat-font;
+  font-size: 1.125rem;
+  font-weight: $bold-weight;
+}
+@mixin text-montserrat-16-400 {
+  font-family: $montserrat-font;
+  font-size: 1rem;
+  font-weight: $regular-weight;
+}
+@mixin text-cherry-16-400 {
+  font-family: $cherry-font;
+  font-size: 1rem;
+  font-weight: $regular-weight;
+}
+@mixin text-kalam-16-400 {
+  font-family: $kalam-font;
+  font-size: 1rem;
+  font-weight: $regular-weight;
+}
 //Media Queries
 @mixin for-tablet-up {
     @media (min-width: 768px) { @content; }

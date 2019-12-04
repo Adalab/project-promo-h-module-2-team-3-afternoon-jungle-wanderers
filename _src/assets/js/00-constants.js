@@ -19,6 +19,12 @@ const palette4 = document.querySelector('#fieldset__design--palette-4');
 
 let paletteChosen = '';
 
+const font1 = document.querySelector('#fieldset__design--font-1');
+const font2 = document.querySelector('#fieldset__design--font-2');
+const font3 = document.querySelector('#fieldset__design--font-3');
+
+let fontChosen = '';
+
 const userName = document.querySelector('#name');
 const userJob = document.querySelector('#job-title');
 const userEmail = document.querySelector('#email');

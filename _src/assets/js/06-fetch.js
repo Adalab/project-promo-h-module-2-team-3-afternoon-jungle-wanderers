@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 function sendForm(event) {
   event.preventDefault();
@@ -6,6 +6,7 @@ function sendForm(event) {
   //creo json
   const datos = {
     "palette": paletteChosen,
+    "font": fontChosen,
     "name": userName.value,
     "job": userJob.value,
     "phone": userTel.value,
@@ -14,7 +15,7 @@ function sendForm(event) {
     "github": userGithub.value,
     "photo": fr.result,
   };
-
+  console.log(datos)
   //petición
   fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
     method: 'POST',

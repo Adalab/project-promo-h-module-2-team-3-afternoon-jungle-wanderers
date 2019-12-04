@@ -11,13 +11,13 @@ function getPalette() {
       palette2.setAttribute('checked', true);
     } else if (paletteChosen === '3') {
       palette3.setAttribute('checked', true);
-    } else {
+    } else if (paletteChosen === '4'){
       palette4.setAttribute('checked', true);
     }
     applyPalette();
   }
   else {
-    palette4.setAttribute('checked', true);
+    palette1.setAttribute('checked', true);
     applyPalette();
   }
 }
@@ -99,3 +99,40 @@ function applyPalette4() {
     IconButton.style.borderColor = '#f15f06';
   }
 }
+
+//FONTS
+const chooseFont = (event) => {
+  fontChosen = event.currentTarget.value;
+  localStorage.setItem('font', fontChosen);
+  applyFont();
+};
+const applyFont = () =>{
+  if (font1.checked){
+    applyFont1();
+  }else if (font2.checked){
+    applyFont2();
+  }else {
+    applyFont3();
+  }
+};
+const applyFont1 = () => {
+  previewCardName.classList.add('fontMontserratBold');
+  previewCardName.classList.remove('fontCherrySwashBold', 'fontKalamBold');
+  previewCardJob.classList.add('fontMontserratRegular');
+  previewCardJob.classList.remove('fontCherrySwashRegular', 'fontKalamRegular');
+};
+const applyFont2 = () => {
+  previewCardName.classList.add('fontCherrySwashBold');
+  previewCardName.classList.remove('fontMontserratBold', 'fontKalamBold');
+  previewCardJob.classList.add('fontCherrySwashRegular');
+  previewCardJob.classList.remove('fontMontserratRegular', 'fontKalamRegular');
+};
+const applyFont3 = () => {
+  previewCardName.classList.add('fontKalamBold');
+  previewCardName.classList.remove('fontMontserratBold', 'fontCherrySwashBold');
+  previewCardJob.classList.add('fontKalamRegular');
+  previewCardJob.classList.remove('fontMontserratRegular', 'fontCherrySwashRegular');
+};
+font1.addEventListener('click', chooseFont);
+font2.addEventListener('click', chooseFont);
+font3.addEventListener('click', chooseFont);
