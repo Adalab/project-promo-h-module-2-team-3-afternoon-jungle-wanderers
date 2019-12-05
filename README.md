@@ -1,6 +1,6 @@
 ![Adalab](_src/assets/images/logo-adalab.png)
 ![Jungle Wondereers](_src/assets/images/group-logo.png)
-# Awesome profile cards :crocodile:
+# Awesome profile cards :crocodile::monkey::palm_tree:
 
 Proyecto módulo 2 de Adalab. Creación de tarjetas de visita virtuales. 
 
