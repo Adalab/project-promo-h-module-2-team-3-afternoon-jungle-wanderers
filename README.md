@@ -1,8 +1,9 @@
 ![Adalab](_src/assets/images/logo-adalab.png)
-![Jungle Wondereers](_src/assets/images/group-logo.png)
+![Jungle Wanderers](_src/assets/images/group-logo.png)
 # Awesome profile cards :crocodile::monkey::palm_tree:
 
-Proyecto módulo 2 de Adalab. Creación de tarjetas de visita virtuales. 
+Proyecto módulo 2 de Adalab. 
+Creación de tarjetas de visita virtuales. 
 
 ## Guía de inicio rápido y tecnologías usadas
 Para trabajar con este repositorio, recomendamos clonar en la misma carpeta el repositorio de Adalab Starter Kit. Para el desarrollo del proyecto hemos utilizado HTML, CSS, SCSS y JAVASCRIPT.
@@ -13,13 +14,13 @@ Con esta web puedes generar tu propia tarjeta de perfil personalizada 👩🏻, 
 
 ## Pasos a seguir
 
-1️. DISEÑA: Elige los colores que más te gusten de la paleta.
+1️. Diseña eligiendo los colores que más te gusten de la paleta.
 
-2️. RELLENA: Rellena todos los campos con tus datos personales.  
+2️. Rellena todos los campos con tus datos personales.  
 
 3️. Prepara tu mejor foto para subirla. 
 
-4️. COMPARTE: Se generará automáticamente una URL con tu tarjeta, y un link para que puedas compartir tu    tarjeta personal en Twitter 
+4️. Comparte: Se generará automáticamente una URL con tu tarjeta, y un link para que puedas compartir tu    tarjeta personal en Twitter 
 
 
 ### Versión lista para subir a producción
