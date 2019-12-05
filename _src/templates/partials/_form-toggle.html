@@ -34,7 +34,8 @@
         </div>
     </section>
 
-    <form action="https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/" name="form" method="post" class="form_wrapper">
+    <form action="https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/" name="form" method="post"
+        class="form_wrapper">
         <fieldset class="fieldset fieldset__design">
             <div id="designContainer" class="form_title-container">
                 <legend class="form_title"><i class="far fa-object-ungroup form_title-icon"></i>DISEÑA</legend>
@@ -46,7 +47,8 @@
                     <div class="color_palettes">
                         <div class="palette-container">
                             <label for="fieldset__design--palette-1"></label>
-                            <input type="radio" name="color-palette" id="fieldset__design--palette-1" class="palette-1" value="1" checked="checked">
+                            <input type="radio" name="color-palette" id="fieldset__design--palette-1" class="palette-1"
+                                value="1" checked="checked">
                             <ul class="color_theme">
                                 <li class="palette1-c1 item"></li>
                                 <li class="palette1-c2 item"></li>
@@ -55,7 +57,8 @@
                         </div>
                         <div class="palette-container">
                             <label for="fieldset__design--palette-2"></label>
-                            <input type="radio" name="color-palette" id="fieldset__design--palette-2" class="palette-2" value="2"> 
+                            <input type="radio" name="color-palette" id="fieldset__design--palette-2" class="palette-2"
+                                value="2">
                             <ul class="color_theme">
                                 <li class="palette2-c1 item"></li>
                                 <li class="palette2-c2 item"></li>
@@ -64,7 +67,8 @@
                         </div>
                         <div class="palette-container">
                             <label for="fieldset__design--palette-3"></label>
-                            <input type="radio" name="color-palette" id="fieldset__design--palette-3" class="palette-3" value="3">
+                            <input type="radio" name="color-palette" id="fieldset__design--palette-3" class="palette-3"
+                                value="3">
                             <ul class="color_theme">
                                 <li class="palette3-c1 item"></li>
                                 <li class="palette3-c2 item"></li>
@@ -89,18 +93,21 @@
                     required>
 
                 <label class="input_label" for="photo">Imagen de perfil *</label>
-                <input id="photo" type="file" name="photo" class="photo js__profile-upload-btn" value="Añadir imagen" required>
+                <input id="photo" type="file" name="photo" class="photo js__profile-upload-btn" value="Añadir imagen"
+                    required>
                 <div class="add-image-container">
                     <button type="button" class="btn-add-image js__profile-trigger">Añadir imagen</button>
                     <div class="preview-image js__profile-preview"></div>
                 </div>
-
-                <label class="input_label" for="email">Email *</label>
-                <input id="email" class="input" placeholder="nombre.apellido@gmail.com" type="email" name="email"
-                    required>
-
-                <label class="input_label" for="tel">Teléfono</label>
-                <input id="tel" class="input" placeholder="123456789" type="tel" name="tel">
+                <div class="email-container">
+                    <label class="input_label" for="email">Email *</label>
+                    <input id="email" class="input" placeholder="nombre.apellido@gmail.com" type="email" name="email"
+                        required>
+                </div>
+                <div class="phone-container">
+                    <label class="input_label" for="tel">Teléfono</label>
+                    <input id="tel" class="input" placeholder="123456789" type="tel" name="tel">
+                </div>
 
                 <label class="input_label" for="linkedin">LinkedIn *</label>
                 <input id="linkedin" class="input" placeholder="www.linkedin.com/in/n-apellido" type="text"
@@ -117,11 +124,15 @@
             </div>
             <div class="share" id="share">
                 <div class="create_card">
-                    <button type="submit" value="submit" id="createCardButton" class="create_card-btn"><i class="far fa-address-card"> CREAR TARJETA</i></button>
+                    <button type="submit" value="submit" id="createCardButton" class="create_card-btn"><i
+                            class="far fa-address-card"> CREAR TARJETA</i></button>
+                    <span class="error-message errorEmail">*Faltan campos por completar*</span>
                 </div>
                 <div class="twitter" id="twitterContainer">
-                    <span class="twitter-message" id="twitterMessage" >La tarjeta ha sido creada:</span>
-                    <a href="" class="twitter-btn" id="twitterBtn"><i class="fab fa-twitter"></i>Compartir en twitter</a>
+                    <span class="twitter-message" id="twitterMessage">La tarjeta ha sido creada:</span>
+                    <a href="" class="twitter-btn" id="twitterBtn" target="_blank"><i
+                            class="fab fa-twitter"></i>Compartir en
+                        twitter</a>
                 </div>
             </div>
         </fieldset>

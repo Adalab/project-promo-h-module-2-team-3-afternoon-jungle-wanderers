@@ -16,6 +16,7 @@ const palette2 = document.querySelector('#fieldset__design--palette-2');
 const palette3 = document.querySelector('#fieldset__design--palette-3');
 let paletteChosen = '';
 
+const inputElements = document.querySelectorAll('.input');
 const userName = document.querySelector('#name');
 const userJob = document.querySelector('#job-title');
 const userEmail = document.querySelector('#email');
@@ -23,6 +24,7 @@ const userTel = document.querySelector('#tel');
 const userLinkedin = document.querySelector('#linkedin');
 const userGithub = document.querySelector('#github');
 const createCardButton = document.querySelector('#createCardButton');
+const errorMessage = document.querySelector('.error-message');
 const twitterContainer = document.querySelector('#twitterContainer');
 const twitterBtn = document.querySelector('#twitterBtn');
 const twitterMessage = document.querySelector('#twitterMessage');

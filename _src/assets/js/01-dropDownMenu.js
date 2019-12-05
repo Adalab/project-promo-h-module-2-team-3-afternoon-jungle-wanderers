@@ -38,5 +38,5 @@ function toggleShare() {
     arrowFillIn.classList.remove('rotate');
 }
 shareContainer.addEventListener('click', toggleShare);
-
+shareContainer.addEventListener('click', checkFilledInputs)
 twitterContainer.classList.add('hidden');

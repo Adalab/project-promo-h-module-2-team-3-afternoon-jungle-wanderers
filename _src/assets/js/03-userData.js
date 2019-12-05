@@ -25,9 +25,13 @@ function addJob() {
 
 function addPhone() {
     if (userTel.value !== '') {
-        phoneIcon.href = `tel:${userTel.value}`;
-        phoneItem.classList.remove('opacity');
-        localStorage.setItem('phone', userTel.value)
+        if (emailValidation() === true) {
+            phoneIcon.href = `tel:${userTel.value}`;
+            phoneItem.classList.remove('opacity');
+            localStorage.setItem('phone', userTel.value)
+        } else {
+            addPhoneValidator();
+        }
     } else {
         phoneItem.classList.add('opacity');
         localStorage.removeItem('phone');
@@ -36,9 +40,14 @@ function addPhone() {
 
 function addEmail() {
     if (userEmail.value !== '') {
-        emailIcon.href = `mailto: ${userEmail.value}`;
-        emailItem.classList.remove('opacity');
-        localStorage.setItem('email', userEmail.value)
+        emailValidation()
+        if (emailValidation() === true) {
+            emailIcon.href = `mailto: ${userEmail.value}`;
+            emailItem.classList.remove('opacity');
+            localStorage.setItem('email', userEmail.value);
+        } else {
+            emailValidationError();
+        }
     } else {
         emailItem.classList.add('opacity');
         localStorage.removeItem('email');
@@ -69,10 +78,46 @@ function addGithub() {
 
 userName.addEventListener('keyup', addName);
 userJob.addEventListener('keyup', addJob);
-userTel.addEventListener('keyup', addPhone);
-userEmail.addEventListener('keyup', addEmail);
+userTel.addEventListener('change', addPhone);
+userEmail.addEventListener('change', addEmail);
 userLinkedin.addEventListener('keyup', addLinkedin);
 userGithub.addEventListener('keyup', addGithub);
+
+//FORM VALIDATION
+
+function emailValidation() {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail.value)) {
+        return (true);
+    } else {
+        return (false)
+        emailValidationError();
+    }
+};
+
+function phoneValidation() {
+    if (/^[\s\S]{0,9}$/.test(userTel.value)) {
+        return (true)
+    } else {
+        return (false)
+        addPhoneValidator()
+    }
+};
+
+function emailValidationError() {
+    const errorSpan = document.createElement('span');
+    errorSpan.innerHTML = '*Introduzca un email válido';
+    const emailContainer = document.querySelector('.email-container');
+    emailContainer.appendChild(errorSpan);
+    errorSpan.classList.add('errorEmail');
+};
+
+function addPhoneValidator() {
+    const errorSpan = document.createElement('span');
+    errorSpan.innerHTML = '*El teléfono que has introducido es incorrecto';
+    const phoneContainer = document.querySelector('.phone-container');
+    phoneContainer.appendChild(errorSpan);
+    errorSpan.classList.add('errorEmail');
+}
 
 
 function getPersData() {
@@ -107,10 +152,11 @@ function getJob() {
 }
 
 function getProfileImage() {
-    if (localStorage.getItem('image')) {
-        profileImage.src = localStorage.getItem('image');
-        profileImage.style.backgroundImage = `url(${localStorage.getItem('image')})`;
-        profilePreview.style.backgroundImage = `url(${localStorage.getItem('image')})`;
+    const imageData = JSON.parse(localStorage.getItem('image'))
+    if (imageData !== null) {
+        profileImage.src = imageData;
+        profileImage.style.backgroundImage = `url(${imageData})`;
+        profilePreview.style.backgroundImage = `url(${imageData})`;
     }
     else {
         profilePreview.src = defaultImage;
