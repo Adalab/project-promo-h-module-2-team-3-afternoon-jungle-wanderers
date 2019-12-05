@@ -1,7 +1,7 @@
 ![Adalab](_src/assets/images/logo-adalab.png)
 # Awesome profile cards :crocodile:
 
-Proyecto módulo 2 de Adalab. Creación de tarjetas de perfil. 
+Proyecto módulo 2 de Adalab. Creación de tarjetas de visita virtuales. 
 
 ## Guía de inicio rápido
 Para trabajar con este repositorio, te recomendamos clonar en la misma carpeta el repositorio de Adalab Starter Kit. Para el desarrollo del proyecto hemos utilizado:
