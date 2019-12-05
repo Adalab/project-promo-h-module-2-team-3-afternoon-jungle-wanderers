@@ -29,6 +29,7 @@ function sendForm(event) {
 }
 function showURL(data) {
   const twitterURL = document.createElement('span');
+  twitterURL.style.textAlign = 'center';
   if (data.success) {
     twitterURL.innerHTML = `<a class="twitter-url" href=${data.cardURL} style="color:#e17334" target="_blank">${data.cardURL}</a>`;
     twitterMessage.insertAdjacentElement('afterend', twitterURL);
