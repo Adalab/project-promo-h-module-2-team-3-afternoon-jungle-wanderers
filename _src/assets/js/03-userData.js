@@ -44,7 +44,7 @@ function addEmail() {
         if (emailValidation() === true) {
             emailIcon.href = `mailto: ${userEmail.value}`;
             emailItem.classList.remove('opacity');
-            localStorage.setItem('email', userEmail.value)
+            localStorage.setItem('email', userEmail.value);
         } else {
             emailValidationError();
         }
@@ -152,10 +152,11 @@ function getJob() {
 }
 
 function getProfileImage() {
-    if (localStorage.getItem('image')) {
-        profileImage.src = localStorage.getItem('image');
-        profileImage.style.backgroundImage = `url(${localStorage.getItem('image')})`;
-        profilePreview.style.backgroundImage = `url(${localStorage.getItem('image')})`;
+    const imageData = JSON.parse(localStorage.getItem('image'))
+    if (imageData !== null) {
+        profileImage.src = imageData;
+        profileImage.style.backgroundImage = `url(${imageData})`;
+        profilePreview.style.backgroundImage = `url(${imageData})`;
     }
     else {
         profilePreview.src = defaultImage;
