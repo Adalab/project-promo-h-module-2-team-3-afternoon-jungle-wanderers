@@ -1,4 +1,4 @@
-![Adalab](_src/assets/images/logo-adalab-80px.png)
+![Adalab](_src/assets/images/logo-adalab.png)
 # Awesome profile cards :crocodile:
 
 Proyecto módulo 2 de Adalab. Creación de tarjetas de perfil. 
@@ -13,7 +13,7 @@ Para trabajar con este repositorio, te recomendamos clonar en la misma carpeta e
 
 
 ## Funcionamiento
-> ### Con esta web puedes generar tu propia tarjeta personal 👩🏻, con la que podrán comunicarse contigo vía teléfono o email :e-mail:. Además, contiene enlaces directos a tus perfiles en linkedIn y en GitHub para que puedan añadirte fácilmente otros usuarios 👥.
+Con esta web puedes generar tu propia tarjeta personal 👩🏻, con la que podrán comunicarse contigo vía teléfono o email :e-mail:. Además, contiene enlaces directos a tus perfiles en linkedIn y en GitHub para que puedan añadirte fácilmente otros usuarios 👥.
 
 ## ¿Te contamos los pasos?
 
