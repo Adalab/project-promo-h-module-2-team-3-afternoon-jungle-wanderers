@@ -88,17 +88,19 @@ userGithub.addEventListener('keyup', addGithub);
 function emailValidation() {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail.value)) {
         return (true);
+    } else {
+        return (false)
+        emailValidationError();
     }
-    return (false)
-    emailValidationError();
 };
 
 function phoneValidation() {
     if (/^[\s\S]{0,9}$/.test(userTel.value)) {
         return (true)
+    } else {
+        return (false)
+        addPhoneValidator()
     }
-    return (false)
-    addPhoneValidator()
 };
 
 function emailValidationError() {
