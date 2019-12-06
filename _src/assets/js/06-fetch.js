@@ -56,8 +56,8 @@ function showURL(data) {
 function shareTwitter(url) {
   const twitterText = encodeURIComponent('He creado esta tarjeta con Awesome Profile Cards. ¡Échale un vistazo!');
   const twitterHashtag = encodeURIComponent('adalab,adalaber,frontEnd,awesomeCards');
-  const twitterLink = `https://twitter.com/intent/tweet?text=${url}`;
   twitterBtn.href = `https://twitter.com/intent/tweet?text=${twitterText}&url=${url}&hashtags=${twitterHashtag}`;
+  linkedInBtn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
 }
 
 createCardButton.addEventListener('click', sendForm);

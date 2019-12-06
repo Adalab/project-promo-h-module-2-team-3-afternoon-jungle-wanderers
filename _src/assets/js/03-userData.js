@@ -37,7 +37,7 @@ function addPhone() {
       phoneItem.classList.remove('opacity');
       localStorage.setItem('phone', userTel.value);
     } else {
-      userTel.nextElementSibling.innerHTML = '*Introduzca un número de teléfono válido';
+      userTel.nextElementSibling.innerHTML = '*El número de teléfono debe tener 9 dígitos';
     }
   } else {
     phoneItem.classList.add('opacity');
@@ -118,7 +118,7 @@ function emailValidation() {
 }
 function phoneValidation() {
   if (!(/^[0-9]{9}/.test(userTel.value))) {
-    userTel.nextElementSibling.innerHTML = '* El número de teléfono debe tener 9 dígitos';
+    userTel.nextElementSibling.innerHTML = '*El número de teléfono debe tener 9 dígitos';
   } else {
     userTel.nextElementSibling.innerHTML = '';
     return true;
