@@ -16,9 +16,9 @@ const profilePreview = document.querySelector('.js__profile-preview');
  * @param {evento} e 
  */
 function getImage(e) {
-  var myFile = e.currentTarget.files[0];
-  fr.addEventListener('load', writeImage);
-  fr.readAsDataURL(myFile);
+    var myFile = e.currentTarget.files[0];
+    fr.addEventListener('load', writeImage);
+    fr.readAsDataURL(myFile);
 }
 
 
@@ -27,12 +27,12 @@ function getImage(e) {
  * trabajar con ellos ;)
  */
 function writeImage() {
-  /* En la propiedad `result` de nuestro FR se almacena
+    /* En la propiedad `result` de nuestro FR se almacena
      * el resultado
      */
-  profileImage.style.backgroundImage = `url(${fr.result})`;
-  profilePreview.style.backgroundImage = `url(${fr.result})`;
-  localStorage.setItem('image', JSON.stringify(fr.result));
+    profileImage.style.backgroundImage = `url(${fr.result})`;
+    profilePreview.style.backgroundImage = `url(${fr.result})`;
+    localStorage.setItem('image', JSON.stringify(fr.result));
 }
 
 
@@ -41,7 +41,7 @@ function writeImage() {
  * que está oculto
  */
 function fakeFileClick() {
-  fileField.click();
+    fileField.click();
 }
 
 /**

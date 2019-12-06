@@ -1,13 +1,15 @@
-'use strict';
+'use strict'
 
 function checkFilledInputs() {
-  if (userName.value === '' || userJob.value === '' || document.getElementById('photo').value === '' || userEmail.value === '' || userLinkedin.value === '' || userGithub.value === '') {
-    createCardButton.disabled = true;
-    errorMessage.classList.remove('hidden');
+  for (const input of inputElements) {
+    if (input.value === '') {
+      createCardButton.disabled = true;
+      errorMessage.classList.remove('hidden');
 
-  } else {
-    createCardButton.disabled = false;
-    errorMessage.classList.add('hidden');
+    } else {
+      createCardButton.disabled = false;
+      errorMessage.classList.add('hidden');
+    }
   }
 }
 
@@ -16,14 +18,14 @@ function sendForm(event) {
 
   //creo json
   const datos = {
-    'palette': paletteChosen,
-    'name': userName.value,
-    'job': userJob.value,
-    'phone': userTel.value,
-    'email': userEmail.value,
-    'linkedin': userLinkedin.value,
-    'github': userGithub.value,
-    'photo': fr.result,
+    "palette": paletteChosen,
+    "name": userName.value,
+    "job": userJob.value,
+    "phone": userTel.value,
+    "email": userEmail.value,
+    "linkedin": userLinkedin.value,
+    "github": userGithub.value,
+    "photo": fr.result,
   };
 
   //petición
