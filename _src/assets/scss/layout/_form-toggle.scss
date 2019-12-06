@@ -223,6 +223,10 @@
     @include text-open-14;
     border: solid 1px $hospital-green;
 }
+.error-alert{
+    color: rgb(236, 18, 18);
+    line-height: 2;
+}
 .photo{
     display: none;
 }

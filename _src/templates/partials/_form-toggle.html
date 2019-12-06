@@ -87,34 +87,37 @@
             <div class="fill-in" id="fillIn">
                 <label class="input_label" for="name">Nombre completo *</label>
                 <input id="name" class="input" placeholder="Nombre Apellido" type="text" name="name" required>
+                <span class="error-alert" id="errorAlert"></span>
 
                 <label class="input_label" for="job-title">Puesto *</label>
-                <input id="job-title" class="input" placeholder="Front-end developer" type="text" name="job-title"
-                    required>
+                <input id="job-title" class="input" placeholder="Front-end developer" type="text" name="job-title" required>
+                <span class="error-alert" id="errorAlert"></span>
 
                 <label class="input_label" for="photo">Imagen de perfil *</label>
-                <input id="photo" type="file" name="photo" class="photo js__profile-upload-btn" value="Añadir imagen"
-                    required>
+                <input id="photo" type="file" name="photo" class="photo js__profile-upload-btn" value="Añadir imagen" required>
                 <div class="add-image-container">
                     <button type="button" class="btn-add-image js__profile-trigger">Añadir imagen</button>
                     <div class="preview-image js__profile-preview"></div>
+                    <span class="error-alert" id="errorAlert"></span>
                 </div>
                 <div class="email-container">
                     <label class="input_label" for="email">Email *</label>
-                    <input id="email" class="input" placeholder="nombre.apellido@gmail.com" type="email" name="email"
-                        required>
+                    <input id="email" class="input" placeholder="nombre.apellido@gmail.com" type="email" name="email" required>
+                    <span class="error-alert" id="errorAlert"></span>
                 </div>
                 <div class="phone-container">
                     <label class="input_label" for="tel">Teléfono</label>
                     <input id="tel" class="input" placeholder="123456789" type="tel" name="tel">
+                    <span class="error-alert" id="errorAlert"></span>
                 </div>
 
                 <label class="input_label" for="linkedin">LinkedIn *</label>
-                <input id="linkedin" class="input" placeholder="www.linkedin.com/in/n-apellido" type="text"
-                    name="linkedin" required>
+                <input id="linkedin" class="input" placeholder="www.linkedin.com/in/n-apellido" type="text" name="linkedin" required>
+                <span class="error-alert" id="errorAlert"></span>
 
                 <label class="input_label" for="github">Github *</label>
                 <input id="github" class="input" placeholder="n.apellido" type="text" name="github" required>
+                <span class="error-alert" id="errorAlert"></span>
             </div>
         </fieldset>
         <fieldset class="fieldset fieldset__share">
