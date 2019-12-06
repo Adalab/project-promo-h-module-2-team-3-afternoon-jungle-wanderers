@@ -6,7 +6,7 @@
 function addName() {
   if (userName.value !== '') {
     previewCardName.innerHTML = userName.value;
-    localStorage.setItem('name', userName.value)
+    localStorage.setItem('name', userName.value);
   } else {
     previewCardName.innerHTML = "Nombre Apellido";
     localStorage.removeItem('name');
@@ -16,7 +16,7 @@ function addName() {
 function addJob() {
   if (userJob.value !== '') {
     previewCardJob.innerHTML = userJob.value;
-    localStorage.setItem('job', userJob.value)
+    localStorage.setItem('job', userJob.value);
   } else {
     previewCardJob.innerHTML = "Front-end developer";
     localStorage.removeItem('job');
@@ -25,7 +25,7 @@ function addJob() {
 
 function addPhone() {
   if (userTel.value !== '') {
-    phoneValidation()
+    phoneValidation();
     if (phoneValidation() === true) {
       phoneIcon.href = `tel:${userTel.value}`;
       phoneItem.classList.remove('opacity');
@@ -41,7 +41,7 @@ function addPhone() {
 
 function addEmail() {
   if (userEmail.value !== '') {
-    emailValidation()
+    emailValidation();
     if (emailValidation() === true) {
       emailIcon.href = `mailto: ${userEmail.value}`;
       emailItem.classList.remove('opacity');
@@ -59,7 +59,7 @@ function addLinkedin() {
   if (userLinkedin.value !== '') {
     linkedinIcon.href = `${userLinkedin.value}`;
     linkedinItem.classList.remove('opacity');
-    localStorage.setItem('linkedin', userLinkedin.value)
+    localStorage.setItem('linkedin', userLinkedin.value);
   } else {
     linkedinItem.classList.add('opacity');
     localStorage.removeItem('linkedin');
@@ -70,7 +70,7 @@ function addGithub() {
   if (userGithub.value !== '') {
     githubIcon.href = `http://github.com/${userGithub.value}`;
     githubItem.classList.remove('opacity');
-    localStorage.setItem('github', userGithub.value)
+    localStorage.setItem('github', userGithub.value);
   } else {
     githubItem.classList.add('opacity');
     localStorage.removeItem('github');
@@ -96,7 +96,7 @@ function emailValidation() {
 }
 
 function phoneValidation() {
-  if (!(/^[\s\S]{0,9}$/.test(userTel.value))) {
+  if (!(/^[0-9]{9}/.test(userTel.value))) {
     userTel.nextElementSibling.innerHTML = '*Introduzca un número de teléfono válido';
   } else {
     userTel.nextElementSibling.innerHTML = '';
@@ -136,7 +136,7 @@ function getJob() {
 }
 
 function getProfileImage() {
-  const imageData = JSON.parse(localStorage.getItem('image'))
+  const imageData = JSON.parse(localStorage.getItem('image'));
   if (imageData !== null) {
     profileImage.src = imageData;
     profileImage.style.backgroundImage = `url(${imageData})`;
