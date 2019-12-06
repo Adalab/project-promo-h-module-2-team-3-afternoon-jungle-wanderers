@@ -5,8 +5,11 @@
 //INPUTS
 function addName() {
   if (userName.value !== '') {
-    previewCardName.innerHTML = userName.value;
-    localStorage.setItem('name', userName.value);
+    nameValidation();
+    if (nameValidation() === true){
+      previewCardName.innerHTML = userName.value;
+      localStorage.setItem('name', userName.value);
+    }
   } else {
     previewCardName.innerHTML = "Nombre Apellido";
     localStorage.removeItem('name');
@@ -15,8 +18,11 @@ function addName() {
 
 function addJob() {
   if (userJob.value !== '') {
-    previewCardJob.innerHTML = userJob.value;
-    localStorage.setItem('job', userJob.value);
+    jobValidation();
+    if (jobValidation() === true){
+      previewCardJob.innerHTML = userJob.value;
+      localStorage.setItem('job', userJob.value);
+    }    
   } else {
     previewCardJob.innerHTML = "Front-end developer";
     localStorage.removeItem('job');
@@ -57,7 +63,7 @@ function addEmail() {
 
 function addLinkedin() {
   if (userLinkedin.value !== '') {
-    linkedinIcon.href = `${userLinkedin.value}`;
+    linkedinIcon.href = `https://www.linkedin.com/in/${userLinkedin.value}`;
     linkedinItem.classList.remove('opacity');
     localStorage.setItem('linkedin', userLinkedin.value);
   } else {
@@ -86,6 +92,22 @@ userGithub.addEventListener('keyup', addGithub);
 
 //FORM VALIDATION
 
+function nameValidation() {
+  if (!(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(userName.value))) {
+    userName.nextElementSibling.innerHTML = '*Introduzca un nombre válido';
+  } else {
+    userName.nextElementSibling.innerHTML = '';
+    return true;
+  }
+}
+function jobValidation() {
+  if (!(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(userJob.value))) {
+    userJob.nextElementSibling.innerHTML = '*Introduzca un puesto válido';
+  } else {
+    userJob.nextElementSibling.innerHTML = '';
+    return true;
+  }
+}
 function emailValidation() {
   if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail.value))) {
     userEmail.nextElementSibling.innerHTML = '*Introduzca un email válido';
@@ -94,10 +116,9 @@ function emailValidation() {
     return true;
   }
 }
-
 function phoneValidation() {
   if (!(/^[0-9]{9}/.test(userTel.value))) {
-    userTel.nextElementSibling.innerHTML = '*Introduzca un número de teléfono válido';
+    userTel.nextElementSibling.innerHTML = '* El número de teléfono debe tener 9 dígitos';
   } else {
     userTel.nextElementSibling.innerHTML = '';
     return true;
