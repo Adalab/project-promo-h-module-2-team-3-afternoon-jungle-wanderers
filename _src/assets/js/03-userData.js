@@ -117,12 +117,11 @@ function emailValidation() {
   }
 }
 function phoneValidation() {
-  if (userTel.value === '') {
-    userTel.nextElementSibling.innerHTML = '';
-    return true;
-  } else if (!(/^[0-9]{9}/.test(userTel.value))) {
+  if (!(/^[0-9]{9}/.test(userTel.value))) {
     userTel.nextElementSibling.innerHTML = '*El número de teléfono debe tener 9 dígitos';
     return false
+  } else { userTel.nextElementSibling.innerHTML = '';
+    return true;
   }
 }
 

@@ -4,7 +4,7 @@ let photoSend = '';
 
 function checkFilledInputs() {
   
-  if (nameValidation() === false || jobValidation() === false || emailValidation() === false || phoneValidation() === false ||userLinkedin.value === '' || userGithub.value === '') {
+  if (nameValidation() === false || jobValidation() === false || emailValidation() === false || userLinkedin.value === '' || userGithub.value === '') {
     createCardButton.disabled = true;
     errorMessage.classList.remove('hidden');
 
