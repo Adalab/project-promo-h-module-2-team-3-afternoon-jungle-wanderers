@@ -3,18 +3,27 @@
 let photoSend = '';
 
 function checkFilledInputs() {
-  for (const input of inputElements) {
-    if (input.value === '') {
-      createCardButton.disabled = true;
-      errorMessage.classList.remove('hidden');
+  
+  if (nameValidation() === false || jobValidation() === false || emailValidation() === false || phoneValidation() === false ||userLinkedin.value === '' || userGithub.value === '') {
+    createCardButton.disabled = true;
+    errorMessage.classList.remove('hidden');
 
-    } else {
-      createCardButton.disabled = false;
-      errorMessage.classList.add('hidden');
-    }
+  } else {
+    createCardButton.disabled = false;
+    errorMessage.classList.add('hidden');
   }
+  
 }
+/*function checkFilledInputs(){
+  if (nameValidation() === false || jobValidation() ===false || phoneValidation() ===false || emailValidation() === false || userLinkedin.value === '' || userGithub.value === ''|| photoSend === ''){
+    createCardButton.disabled = true;
+    errorMessage.classList.remove('hidden');
 
+  } else {
+    createCardButton.disabled = false;
+    errorMessage.classList.add('hidden');
+  }
+} */
 function sendForm(event) {
   event.preventDefault();
 

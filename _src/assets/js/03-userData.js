@@ -117,11 +117,12 @@ function emailValidation() {
   }
 }
 function phoneValidation() {
-  if (!(/^[0-9]{9}/.test(userTel.value))) {
-    userTel.nextElementSibling.innerHTML = '*El número de teléfono debe tener 9 dígitos';
-  } else {
+  if (userTel.value === '') {
     userTel.nextElementSibling.innerHTML = '';
     return true;
+  } else if (!(/^[0-9]{9}/.test(userTel.value))) {
+    userTel.nextElementSibling.innerHTML = '*El número de teléfono debe tener 9 dígitos';
+    return false
   }
 }
 
@@ -158,12 +159,12 @@ function getJob() {
 
 function getProfileImage() {
   if (localStorage.getItem('image')) {
-    profileImage.src = localStorage.getItem('image');
+    //profileImage.src = localStorage.getItem('image');
     profileImage.style.backgroundImage = `url(${localStorage.getItem('image')})`;
     profilePreview.style.backgroundImage = `url(${localStorage.getItem('image')})`;
   }
   else {
-    profilePreview.src = defaultImage;
+    //profilePreview.src = defaultImage;
     profileImage.style.backgroundImage = `url(${defaultImage})`;
     profilePreview.style.backgroundImage = `url(${defaultImage})`;
   }
