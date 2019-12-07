@@ -1,4 +1,6 @@
-'use strict'
+'use strict';
+
+let photoSend = '';
 
 function checkFilledInputs() {
   for (const input of inputElements) {
@@ -16,6 +18,16 @@ function checkFilledInputs() {
 function sendForm(event) {
   event.preventDefault();
 
+  if (!fr.result && !localStorage.getItem('image')){
+    photoSend = defaultImage;
+  }
+  else if (!fr.result && localStorage.getItem('image')){
+    photoSend = localStorage.getItem('image');
+  }
+  else {
+    photoSend = fr.result;
+    localStorage.setItem('image',photoSend );
+  }
   //creo json
   const datos = {
     "palette": paletteChosen,
@@ -25,9 +37,8 @@ function sendForm(event) {
     "email": userEmail.value,
     "linkedin": userLinkedin.value,
     "github": userGithub.value,
-    "photo": fr.result,
+    "photo": photoSend,
   };
-
   //petición
   fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
     method: 'POST',

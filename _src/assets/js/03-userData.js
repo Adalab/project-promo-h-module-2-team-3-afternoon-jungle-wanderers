@@ -157,11 +157,10 @@ function getJob() {
 }
 
 function getProfileImage() {
-  const imageData = JSON.parse(localStorage.getItem('image'));
-  if (imageData !== null) {
-    profileImage.src = imageData;
-    profileImage.style.backgroundImage = `url(${imageData})`;
-    profilePreview.style.backgroundImage = `url(${imageData})`;
+  if (localStorage.getItem('image')) {
+    profileImage.src = localStorage.getItem('image');
+    profileImage.style.backgroundImage = `url(${localStorage.getItem('image')})`;
+    profilePreview.style.backgroundImage = `url(${localStorage.getItem('image')})`;
   }
   else {
     profilePreview.src = defaultImage;
