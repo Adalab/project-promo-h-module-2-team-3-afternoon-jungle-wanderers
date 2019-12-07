@@ -101,6 +101,24 @@ function applyPalette4() {
 }
 
 //FONTS
+
+function getFont() {
+  if (localStorage.getItem('font')) {
+    fontChosen = localStorage.getItem('font');
+    if (fontChosen === '1') {
+      font1.setAttribute('checked', true);
+    } else if (fontChosen === '2') {
+      font2.setAttribute('checked', true);
+    } else if (fontChosen === '3') {
+      font3.setAttribute('checked', true);
+    }
+    applyFont();
+  }
+  else {
+    font1.setAttribute('checked', true);
+    applyFont();
+  }
+}
 const chooseFont = (event) => {
   fontChosen = event.currentTarget.value;
   localStorage.setItem('font', fontChosen);

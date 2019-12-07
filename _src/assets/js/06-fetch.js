@@ -15,7 +15,7 @@ function sendForm(event) {
     "github": userGithub.value,
     "photo": fr.result,
   };
-  console.log(datos)
+  console.log(datos);
   //petición
   fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
     method: 'POST',
