@@ -95,6 +95,7 @@ userGithub.addEventListener('keyup', addGithub);
 function nameValidation() {
   if (!(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(userName.value))) {
     userName.nextElementSibling.innerHTML = '*Introduzca un nombre válido';
+    return false;
   } else {
     userName.nextElementSibling.innerHTML = '';
     return true;
@@ -103,6 +104,7 @@ function nameValidation() {
 function jobValidation() {
   if (!(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(userJob.value))) {
     userJob.nextElementSibling.innerHTML = '*Introduzca un puesto válido';
+    return false;
   } else {
     userJob.nextElementSibling.innerHTML = '';
     return true;
@@ -111,6 +113,7 @@ function jobValidation() {
 function emailValidation() {
   if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail.value))) {
     userEmail.nextElementSibling.innerHTML = '*Introduzca un email válido';
+    return false;
   } else {
     userEmail.nextElementSibling.innerHTML = '';
     return true;
