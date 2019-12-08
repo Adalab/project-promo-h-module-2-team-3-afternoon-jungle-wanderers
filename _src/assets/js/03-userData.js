@@ -4,209 +4,214 @@
 
 //INPUTS
 function addName() {
-    if (userName.value !== '') {
-        previewCardName.innerHTML = userName.value;
-        localStorage.setItem('name', userName.value)
-    } else {
-        previewCardName.innerHTML = "Nombre Apellido";
-        localStorage.removeItem('name');
+  if (userName.value !== '') {
+    nameValidation();
+    if (nameValidation() === true){
+      previewCardName.innerHTML = userName.value;
+      localStorage.setItem('name', userName.value);
     }
+  } else {
+    previewCardName.innerHTML = "Nombre Apellido";
+    localStorage.removeItem('name');
+  }
 }
 
 function addJob() {
-    if (userJob.value !== '') {
-        previewCardJob.innerHTML = userJob.value;
-        localStorage.setItem('job', userJob.value)
-    } else {
-        previewCardJob.innerHTML = "Front-end developer";
-        localStorage.removeItem('job');
-    }
+  if (userJob.value !== '') {
+    jobValidation();
+    if (jobValidation() === true){
+      previewCardJob.innerHTML = userJob.value;
+      localStorage.setItem('job', userJob.value);
+    }    
+  } else {
+    previewCardJob.innerHTML = "Front-end developer";
+    localStorage.removeItem('job');
+  }
 }
 
 function addPhone() {
-    if (userTel.value !== '') {
-        if (emailValidation() === true) {
-            phoneIcon.href = `tel:${userTel.value}`;
-            phoneItem.classList.remove('opacity');
-            localStorage.setItem('phone', userTel.value)
-        } else {
-            addPhoneValidator();
-        }
+  if (userTel.value !== '') {
+    phoneValidation();
+    if (phoneValidation() === true) {
+      phoneIcon.href = `tel:${userTel.value}`;
+      phoneItem.classList.remove('opacity');
+      localStorage.setItem('phone', userTel.value);
     } else {
-        phoneItem.classList.add('opacity');
-        localStorage.removeItem('phone');
+      userTel.nextElementSibling.innerHTML = '*El número de teléfono debe tener 9 dígitos';
     }
+  } else {
+    phoneItem.classList.add('opacity');
+    localStorage.removeItem('phone');
+  }
 }
 
 function addEmail() {
-    if (userEmail.value !== '') {
-        emailValidation()
-        if (emailValidation() === true) {
-            emailIcon.href = `mailto: ${userEmail.value}`;
-            emailItem.classList.remove('opacity');
-            localStorage.setItem('email', userEmail.value);
-        } else {
-            emailValidationError();
-        }
+  if (userEmail.value !== '') {
+    emailValidation();
+    if (emailValidation() === true) {
+      emailIcon.href = `mailto: ${userEmail.value}`;
+      emailItem.classList.remove('opacity');
+      localStorage.setItem('email', userEmail.value);
     } else {
-        emailItem.classList.add('opacity');
-        localStorage.removeItem('email');
+      userEmail.nextElementSibling.innerHTML = '*Introduzca un email válido';
     }
+  } else {
+    emailItem.classList.add('opacity');
+    localStorage.removeItem('email');
+  }
 }
 
 function addLinkedin() {
-    if (userLinkedin.value !== '') {
-        linkedinIcon.href = `${userLinkedin.value}`;
-        linkedinItem.classList.remove('opacity');
-        localStorage.setItem('linkedin', userLinkedin.value)
-    } else {
-        linkedinItem.classList.add('opacity');
-        localStorage.removeItem('linkedin');
-    }
+  if (userLinkedin.value !== '') {
+    linkedinIcon.href = `https://www.linkedin.com/in/${userLinkedin.value}`;
+    linkedinItem.classList.remove('opacity');
+    localStorage.setItem('linkedin', userLinkedin.value);
+  } else {
+    linkedinItem.classList.add('opacity');
+    localStorage.removeItem('linkedin');
+  }
 }
 
 function addGithub() {
-    if (userGithub.value !== '') {
-        githubIcon.href = `http://github.com/${userGithub.value}`;
-        githubItem.classList.remove('opacity');
-        localStorage.setItem('github', userGithub.value)
-    } else {
-        githubItem.classList.add('opacity');
-        localStorage.removeItem('github');
-    }
+  if (userGithub.value !== '') {
+    githubIcon.href = `http://github.com/${userGithub.value}`;
+    githubItem.classList.remove('opacity');
+    localStorage.setItem('github', userGithub.value);
+  } else {
+    githubItem.classList.add('opacity');
+    localStorage.removeItem('github');
+  }
 }
 
 userName.addEventListener('keyup', addName);
 userJob.addEventListener('keyup', addJob);
-userTel.addEventListener('change', addPhone);
-userEmail.addEventListener('change', addEmail);
+userTel.addEventListener('keyup', addPhone);
+userEmail.addEventListener('keyup', addEmail);
 userLinkedin.addEventListener('keyup', addLinkedin);
 userGithub.addEventListener('keyup', addGithub);
 
 //FORM VALIDATION
 
+function nameValidation() {
+  if (!(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(userName.value))) {
+    userName.nextElementSibling.innerHTML = '*Introduzca un nombre válido';
+  } else {
+    userName.nextElementSibling.innerHTML = '';
+    return true;
+  }
+}
+function jobValidation() {
+  if (!(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(userJob.value))) {
+    userJob.nextElementSibling.innerHTML = '*Introduzca un puesto válido';
+  } else {
+    userJob.nextElementSibling.innerHTML = '';
+    return true;
+  }
+}
 function emailValidation() {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail.value)) {
-        return (true);
-    } else {
-        return (false)
-        emailValidationError();
-    }
-};
-
+  if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail.value))) {
+    userEmail.nextElementSibling.innerHTML = '*Introduzca un email válido';
+  } else {
+    userEmail.nextElementSibling.innerHTML = '';
+    return true;
+  }
+}
 function phoneValidation() {
-    if (/^[\s\S]{0,9}$/.test(userTel.value)) {
-        return (true)
-    } else {
-        return (false)
-        addPhoneValidator()
-    }
-};
-
-function emailValidationError() {
-    const errorSpan = document.createElement('span');
-    errorSpan.innerHTML = '*Introduzca un email válido';
-    const emailContainer = document.querySelector('.email-container');
-    emailContainer.appendChild(errorSpan);
-    errorSpan.classList.add('errorEmail');
-};
-
-function addPhoneValidator() {
-    const errorSpan = document.createElement('span');
-    errorSpan.innerHTML = '*El teléfono que has introducido es incorrecto';
-    const phoneContainer = document.querySelector('.phone-container');
-    phoneContainer.appendChild(errorSpan);
-    errorSpan.classList.add('errorEmail');
+  if (!(/^[0-9]{9}/.test(userTel.value))) {
+    userTel.nextElementSibling.innerHTML = '*El número de teléfono debe tener 9 dígitos';
+  } else {
+    userTel.nextElementSibling.innerHTML = '';
+    return true;
+  }
 }
 
-
 function getPersData() {
-    getPalette();
-    getName();
-    getJob();
-    getProfileImage();
-    getPhone();
-    getEmail();
-    getLinkedin();
-    getGithub();
+  getPalette();
+  getName();
+  getJob();
+  getProfileImage();
+  getPhone();
+  getEmail();
+  getLinkedin();
+  getGithub();
 }
 
 function getName() {
-    if (localStorage.getItem('name')) {
-        userName.value = localStorage.getItem('name');
-        previewCardName.innerHTML = localStorage.getItem('name');
-    }
-    else {
-        userName.value = '';
-    }
+  if (localStorage.getItem('name')) {
+    userName.value = localStorage.getItem('name');
+    previewCardName.innerHTML = localStorage.getItem('name');
+  }
+  else {
+    userName.value = '';
+  }
 }
 
 function getJob() {
-    if (localStorage.getItem('job')) {
-        userJob.value = localStorage.getItem('job');
-        previewCardJob.innerHTML = localStorage.getItem('job');
-    }
-    else {
-        userJob.value = '';
-    }
+  if (localStorage.getItem('job')) {
+    userJob.value = localStorage.getItem('job');
+    previewCardJob.innerHTML = localStorage.getItem('job');
+  }
+  else {
+    userJob.value = '';
+  }
 }
 
 function getProfileImage() {
-    const imageData = JSON.parse(localStorage.getItem('image'))
-    if (imageData !== null) {
-        profileImage.src = imageData;
-        profileImage.style.backgroundImage = `url(${imageData})`;
-        profilePreview.style.backgroundImage = `url(${imageData})`;
-    }
-    else {
-        profilePreview.src = defaultImage;
-        profileImage.style.backgroundImage = `url(${defaultImage})`;
-        profilePreview.style.backgroundImage = `url(${defaultImage})`;
-    }
+  const imageData = JSON.parse(localStorage.getItem('image'));
+  if (imageData !== null) {
+    profileImage.src = imageData;
+    profileImage.style.backgroundImage = `url(${imageData})`;
+    profilePreview.style.backgroundImage = `url(${imageData})`;
+  }
+  else {
+    profilePreview.src = defaultImage;
+    profileImage.style.backgroundImage = `url(${defaultImage})`;
+    profilePreview.style.backgroundImage = `url(${defaultImage})`;
+  }
 }
 
 function getPhone() {
-    if (localStorage.getItem('phone')) {
-        userTel.value = localStorage.getItem('phone');
-        phoneIcon.href = `tel:${userTel.value}`;
-        phoneItem.classList.remove('opacity');
-    }
-    else {
-        userTel.value = '';
-    }
+  if (localStorage.getItem('phone')) {
+    userTel.value = localStorage.getItem('phone');
+    phoneIcon.href = `tel:${userTel.value}`;
+    phoneItem.classList.remove('opacity');
+  }
+  else {
+    userTel.value = '';
+  }
 }
 
 function getEmail() {
-    if (localStorage.getItem('email')) {
-        userEmail.value = localStorage.getItem('email');
-        emailIcon.href = `tel:${userEmail.value}`;
-        emailItem.classList.remove('opacity');
-    }
-    else {
-        userEmail.value = '';
-    }
+  if (localStorage.getItem('email')) {
+    userEmail.value = localStorage.getItem('email');
+    emailIcon.href = `tel:${userEmail.value}`;
+    emailItem.classList.remove('opacity');
+  }
+  else {
+    userEmail.value = '';
+  }
 }
 
 function getLinkedin() {
-    if (localStorage.getItem('linkedin')) {
-        userLinkedin.value = localStorage.getItem('linkedin');
-        linkedinIcon.href = `tel:${userLinkedin.value}`;
-        linkedinItem.classList.remove('opacity');
-    }
-    else {
-        userLinkedin.value = '';
-    }
+  if (localStorage.getItem('linkedin')) {
+    userLinkedin.value = localStorage.getItem('linkedin');
+    linkedinIcon.href = `tel:${userLinkedin.value}`;
+    linkedinItem.classList.remove('opacity');
+  }
+  else {
+    userLinkedin.value = '';
+  }
 }
 
 function getGithub() {
-    if (localStorage.getItem('github')) {
-        userGithub.value = localStorage.getItem('github');
-        githubIcon.href = `tel:${userGithub.value}`;
-        githubItem.classList.remove('opacity');
-    }
-    else {
-        userGithub.value = '';
-    }
+  if (localStorage.getItem('github')) {
+    userGithub.value = localStorage.getItem('github');
+    githubIcon.href = `tel:${userGithub.value}`;
+    githubItem.classList.remove('opacity');
+  }
+  else {
+    userGithub.value = '';
+  }
 }
 
 
