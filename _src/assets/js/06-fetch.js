@@ -2,7 +2,9 @@
 
 function checkFilledInputs() {
   for (const input of inputElements) {
-    if (input.value === '') {
+    if (input.value === ''
+      || !nameValidation() || !jobValidation()
+      || !emailValidation() || !phoneValidation()) {
       createCardButton.disabled = true;
       errorMessage.classList.remove('hidden');
 

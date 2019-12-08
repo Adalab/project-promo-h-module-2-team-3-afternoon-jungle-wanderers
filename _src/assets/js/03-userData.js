@@ -1,12 +1,10 @@
 'use strict';
 
-
-
 //INPUTS
 function addName() {
   if (userName.value !== '') {
-    nameValidation();
-    if (nameValidation() === true){
+    //nameValidation();
+    if (nameValidation()) {
       previewCardName.innerHTML = userName.value;
       localStorage.setItem('name', userName.value);
     }
@@ -18,11 +16,11 @@ function addName() {
 
 function addJob() {
   if (userJob.value !== '') {
-    jobValidation();
-    if (jobValidation() === true){
+    //jobValidation();
+    if (jobValidation()) {
       previewCardJob.innerHTML = userJob.value;
       localStorage.setItem('job', userJob.value);
-    }    
+    }
   } else {
     previewCardJob.innerHTML = "Front-end developer";
     localStorage.removeItem('job');
@@ -31,7 +29,7 @@ function addJob() {
 
 function addPhone() {
   if (userTel.value !== '') {
-    phoneValidation();
+    //phoneValidation();
     if (phoneValidation() === true) {
       phoneIcon.href = `tel:${userTel.value}`;
       phoneItem.classList.remove('opacity');
@@ -47,7 +45,7 @@ function addPhone() {
 
 function addEmail() {
   if (userEmail.value !== '') {
-    emailValidation();
+    //semailValidation();
     if (emailValidation() === true) {
       emailIcon.href = `mailto: ${userEmail.value}`;
       emailItem.classList.remove('opacity');
@@ -95,6 +93,7 @@ userGithub.addEventListener('keyup', addGithub);
 function nameValidation() {
   if (!(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(userName.value))) {
     userName.nextElementSibling.innerHTML = '*Introduzca un nombre válido';
+
   } else {
     userName.nextElementSibling.innerHTML = '';
     return true;
