@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const designContainer = document.querySelector('#designContainer');
 const fillInContainer = document.querySelector('#fillInContainer');
@@ -28,7 +28,6 @@ const errorMessage = document.querySelector('.error-message');
 const twitterContainer = document.querySelector('#twitterContainer');
 const twitterBtn = document.querySelector('#twitterBtn');
 const twitterMessage = document.querySelector('#twitterMessage');
-//const errorMessage = document.querySelectorAll('#errorMessage');
 const linkedInBtn = document.querySelector('#linkedInBtn');
 
 const defaultImage = './assets/images/portrait.jpg';

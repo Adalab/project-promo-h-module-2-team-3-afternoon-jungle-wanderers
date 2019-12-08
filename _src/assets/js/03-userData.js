@@ -95,6 +95,7 @@ userGithub.addEventListener('keyup', addGithub);
 function nameValidation() {
   if (!(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(userName.value))) {
     userName.nextElementSibling.innerHTML = '*Introduzca un nombre válido';
+    return false;
   } else {
     userName.nextElementSibling.innerHTML = '';
     return true;
@@ -103,6 +104,7 @@ function nameValidation() {
 function jobValidation() {
   if (!(/^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/.test(userJob.value))) {
     userJob.nextElementSibling.innerHTML = '*Introduzca un puesto válido';
+    return false;
   } else {
     userJob.nextElementSibling.innerHTML = '';
     return true;
@@ -111,6 +113,7 @@ function jobValidation() {
 function emailValidation() {
   if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(userEmail.value))) {
     userEmail.nextElementSibling.innerHTML = '*Introduzca un email válido';
+    return false;
   } else {
     userEmail.nextElementSibling.innerHTML = '';
     return true;
@@ -119,8 +122,8 @@ function emailValidation() {
 function phoneValidation() {
   if (!(/^[0-9]{9}/.test(userTel.value))) {
     userTel.nextElementSibling.innerHTML = '*El número de teléfono debe tener 9 dígitos';
-  } else {
-    userTel.nextElementSibling.innerHTML = '';
+    return false
+  } else { userTel.nextElementSibling.innerHTML = '';
     return true;
   }
 }
@@ -157,14 +160,13 @@ function getJob() {
 }
 
 function getProfileImage() {
-  const imageData = JSON.parse(localStorage.getItem('image'));
-  if (imageData !== null) {
-    profileImage.src = imageData;
-    profileImage.style.backgroundImage = `url(${imageData})`;
-    profilePreview.style.backgroundImage = `url(${imageData})`;
+  if (localStorage.getItem('image')) {
+    //profileImage.src = localStorage.getItem('image');
+    profileImage.style.backgroundImage = `url(${localStorage.getItem('image')})`;
+    profilePreview.style.backgroundImage = `url(${localStorage.getItem('image')})`;
   }
   else {
-    profilePreview.src = defaultImage;
+    //profilePreview.src = defaultImage;
     profileImage.style.backgroundImage = `url(${defaultImage})`;
     profilePreview.style.backgroundImage = `url(${defaultImage})`;
   }
