@@ -1,6 +1,6 @@
 
 
-@media all and (min-width: 768px){
+@include for-tablet-up{
     .main{
         height: 850px;
         display: flex;
@@ -20,6 +20,11 @@
         width: 400px;
         margin-block-end: auto;
         padding-right: 30px;
+    }
+    
+    .preview{
+        border: 3px solid $dark-green-blue;
+        border-radius: 8px;
     }
 }
 

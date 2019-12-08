@@ -1,5 +1,4 @@
-// eslint-disable-next-line semi
-'use strict'
+'use strict';
 
 const designContainer = document.querySelector('#designContainer');
 const fillInContainer = document.querySelector('#fillInContainer');
@@ -25,6 +24,7 @@ const font3 = document.querySelector('#fieldset__design--font-3');
 
 let fontChosen = '';
 
+const inputElements = document.querySelectorAll('.input');
 const userName = document.querySelector('#name');
 const userJob = document.querySelector('#job-title');
 const userEmail = document.querySelector('#email');
@@ -32,9 +32,11 @@ const userTel = document.querySelector('#tel');
 const userLinkedin = document.querySelector('#linkedin');
 const userGithub = document.querySelector('#github');
 const createCardButton = document.querySelector('#createCardButton');
+const errorMessage = document.querySelector('.error-message');
 const twitterContainer = document.querySelector('#twitterContainer');
 const twitterBtn = document.querySelector('#twitterBtn');
 const twitterMessage = document.querySelector('#twitterMessage');
+const linkedInBtn = document.querySelector('#linkedInBtn');
 
 const defaultImage = './assets/images/portrait.jpg';
 

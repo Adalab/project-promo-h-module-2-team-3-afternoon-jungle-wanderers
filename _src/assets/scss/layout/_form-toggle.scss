@@ -8,18 +8,24 @@
     background-image: linear-gradient(to bottom, #f5f5f5, $white-full 9%);
     height: 80%;
 }
+.errorEmail {
+	font-size: rem(14);
+	color: red;
+	text-align: center;
+	margin-bottom: rem(10);
+}
 
 .preview{
     background: url('../images/leavesBackground.jpg') no-repeat;
     background-size: cover;
     height: 80vh;
     //overflow: hidden;
-    border: 3px solid $dark-green-blue;
-    border-radius: 8px;
+    border-bottom: 3px solid $dark-green-blue;
+    border-top: 3px solid $dark-green-blue;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+       
         
     &_card-container{
         height: 400px;
@@ -244,6 +250,10 @@
     @include text-open-14;
     border: solid 1px $hospital-green;
 }
+.error-alert{
+    color: rgb(236, 18, 18);
+    line-height: 2;
+}
 .photo{
     display: none;
 }
@@ -277,6 +287,7 @@
     width: 100%;
     border-bottom: 1px solid $white-two;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
     &-btn{
@@ -287,6 +298,7 @@
         box-shadow: 0 1px 6px 0 $black-32;
         background-color: $dull-orange;
         color: $white-full;
+        align-self: center;
         cursor: pointer;
         &:hover{
             transform: scale(1.05);
@@ -295,6 +307,7 @@
         &:disabled{
             background-color: $black-32;
             pointer-events: none;
+            align-self: center;
         }
     }
 }
@@ -311,10 +324,10 @@
         color: $gunmetal;
     }
     &-btn{
-        width: 185px;
+        width: 195px;
         height: 33px;
         display: block;
-        padding-top: 5px;
+        padding-top: 6px;
         border-radius: 5px;
         box-shadow: 0 0 4px 0 $black-32;
         background-color: $azure;
@@ -327,7 +340,30 @@
         }
     }
 }
-
+.linkedin-btn{
+    width: 195px;
+    height: 33px;
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 9px;
+    border-radius: 5px;
+    box-shadow: 0 0 4px 0 $black-32;
+    border: 1px solid rgb(51, 50, 50);
+    background-color: #dbdfe2;
+    @include text-open-14;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+    margin: 0 auto 30px;
+    &:hover{
+        transform: scale(1.05);
+    }
+}
+.fa-linkedin{
+    color: #0077b5;
+    font-size: rem(18);
+    margin-top: 1px;
+}
 /*JS classes*/
 .hidden{
     display: none;

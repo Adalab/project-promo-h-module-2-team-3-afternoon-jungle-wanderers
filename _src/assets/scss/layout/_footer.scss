@@ -32,11 +32,25 @@
       padding: 20px 41px;
     }
   }
+  .footer__logo-container{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 15px 0 15px 0;
+  }
   .footer__logo{
     margin: 12px 0 0 0;
     height: 40px;
+    padding-top: 5px;
     @include for-tablet-up{
       margin: 0 41px 0 41px;
     }
-    
+  }
+  .footer__logo__group{
+    height: 70px;
+    width: 100px;
+    @include for-tablet-up{
+      display: none;
+    }
   }
