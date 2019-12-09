@@ -1,13 +1,27 @@
 .page__header {
     width: 100%;
+    @include for-tablet-up{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
 }
 .image__header {
     max-width: 201px;
     margin-left: 40px;
     height: 10%;
-
     @include for-tablet-up{
         margin-left: 60px;
+    }
+}
+.logo__group {
+    display: none;
+    @include for-tablet-up {
+    display: inline;
+    height: 80px;
+    width: 170px;
+    padding-right: 40px;
+    margin-top: 10px;
     }
 }
 
