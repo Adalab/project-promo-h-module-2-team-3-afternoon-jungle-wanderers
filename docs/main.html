@@ -8,16 +8,20 @@
         <link rel="icon" href="./favicon.png" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:900|Montserrat:400,700|Open+Sans:400,600&display=swap"
         rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cherry+Swash:400,700|Kalam:400,700&display=swap"
+        rel="stylesheet">
         <script src="https://kit.fontawesome.com/bf82408d8a.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="./assets/css/main.css" />
     </head>
     
     <body>
         <div class="page">
-            <header class="page__header">
-                <div>
+            <header>
+                <div class="page__header">
                     <img class="image__header" src="./assets/images/logo-awesome-profiles.svg"
                     alt="Awesome profile-cards" />
+                    <img class="logo__group" src="./assets/images/group-logo.png" alt="Nuestro logo"
+                    />
                 </div>
             </header>
             <main class="main">
@@ -72,9 +76,19 @@
                                 <p class="color_title">COLORES</p>
                                 <div class="color_palettes">
                                     <div class="palette-container">
+                                        <label for="fieldset__design--palette-4"></label>
+                                        <input type="radio" name="color-palette" id="fieldset__design--palette-4"
+                                        class="palette-4" value="4">
+                                        <ul class="color_theme">
+                                            <li class="palette4-c1 item"></li>
+                                            <li class="palette4-c2 item"></li>
+                                            <li class="palette4-c3 item"></li>
+                                        </ul>
+                                    </div>
+                                    <div class="palette-container">
                                         <label for="fieldset__design--palette-1"></label>
                                         <input type="radio" name="color-palette" id="fieldset__design--palette-1"
-                                        class="palette-1" value="1" checked="checked">
+                                        class="palette-1" value="1">
                                         <ul class="color_theme">
                                             <li class="palette1-c1 item"></li>
                                             <li class="palette1-c2 item"></li>
@@ -103,6 +117,26 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="fonts">
+                                <p class="fonts_title">FUENTES</p>
+                                <div class="font_families">
+                                    <div class="font-container">
+                                        <label for="fieldset__design--font-1" class="font-montserrat">Montserrat</label>
+                                        <input type="radio" name="font-family" id="fieldset__design--font-1"
+                                        class="font-1" value="1" checked="checked">
+                                    </div>
+                                    <div class="font-container">
+                                        <label for="fieldset__design--font-2" class="font-cherry">Cherry Swash</label>
+                                        <input type="radio" name="font-family" id="fieldset__design--font-2"
+                                        class="font-2" value="2">
+                                    </div>
+                                    <div class="font-container">
+                                        <label for="fieldset__design--font-3" class="font-kalam">Charmonman</label>
+                                        <input type="radio" name="font-family" id="fieldset__design--font-3"
+                                        class="font-3" value="3">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </fieldset>
                     <fieldset class="fieldset fieldset__fill-out">
@@ -113,29 +147,43 @@
                         <div class="fill-in" id="fillIn">
                             <label class="input_label" for="name">Nombre completo *</label>
                             <input id="name" class="input" placeholder="Nombre Apellido"
-                            type="text" name="name" required>
-                            <label class="input_label" for="job-title">Puesto *</label>
+                            type="text" name="name" required> <span class="error-alert" id="errorAlert"></span>
+
+                            <label class="input_label"
+                            for="job-title">Puesto *</label>
                             <input id="job-title" class="input" placeholder="Front-end developer"
-                            type="text" name="job-title" required>
-                            <label class="input_label" for="photo">Imagen de perfil *</label>
+                            type="text" name="job-title" required> <span class="error-alert" id="errorAlert"></span>
+
+                            <label class="input_label"
+                            for="photo">Imagen de perfil *</label>
                             <input id="photo" type="file" name="photo" class="photo js__profile-upload-btn"
                             value="Añadir imagen" required>
                             <div class="add-image-container">
                                 <button type="button" class="btn-add-image js__profile-trigger">Añadir imagen</button>
-                                <div class="preview-image js__profile-preview"></div>
+                                <div class="preview-image js__profile-preview"></div> <span class="error-alert" id="errorAlert"></span>
+
                             </div>
-                            <label class="input_label" for="email">Email *</label>
-                            <input id="email" class="input" placeholder="nombre.apellido@gmail.com"
-                            type="email" name="email" required>
-                            <label class="input_label" for="tel">Teléfono</label>
-                            <input id="tel" class="input" placeholder="123456789"
-                            type="tel" name="tel">
+                            <div class="email-container">
+                                <label class="input_label" for="email">Email *</label>
+                                <input id="email" class="input" placeholder="nombre.apellido@gmail.com"
+                                type="email" name="email" required> <span class="error-alert" id="errorAlert"></span>
+
+                            </div>
+                            <div class="phone-container">
+                                <label class="input_label" for="tel">Teléfono</label>
+                                <input id="tel" class="input" placeholder="123456789"
+                                type="tel" name="tel"> <span class="error-alert" id="errorAlert"></span>
+
+                            </div>
                             <label class="input_label" for="linkedin">LinkedIn *</label>
-                            <input id="linkedin" class="input" placeholder="www.linkedin.com/in/n-apellido"
-                            type="text" name="linkedin" required>
-                            <label class="input_label" for="github">Github *</label>
-                            <input id="github" class="input" placeholder="n.apellido"
-                            type="text" name="github" required>
+                            <input id="linkedin" class="input" placeholder="nombre de usuario"
+                            type="text" name="linkedin" required> <span class="error-alert" id="errorAlert"></span>
+
+                            <label class="input_label"
+                            for="github">Github *</label>
+                            <input id="github" class="input" placeholder="nombre de usuario"
+                            type="text" name="github" required> <span class="error-alert" id="errorAlert"></span>
+
                         </div>
                     </fieldset>
                     <fieldset class="fieldset fieldset__share">
@@ -150,12 +198,15 @@
                             <div class="create_card">
                                 <button type="submit" value="submit" id="createCardButton" class="create_card-btn"><i class="far fa-address-card"> CREAR TARJETA</i>
 
-                                </button>
+                                </button> <span class="error-message errorEmail">*Faltan campos por completar*</span>
+
                             </div>
                             <div class="twitter" id="twitterContainer"> <span class="twitter-message" id="twitterMessage">La tarjeta ha sido creada:</span>
 
                                 <a
-                                href="" class="twitter-btn" id="twitterBtn"><i class="fab fa-twitter"></i>Compartir en twitter</a>
+                                href="" class="twitter-btn" id="twitterBtn" target="_blank"><i class="fab fa-twitter"></i> Compartir en twitter</a> <a href="" class="linkedin-btn"
+                                    id="linkedInBtn" target="_blank"><i class="fab fa-linkedin"></i> Compartir en linkedIn</a>
+
                             </div>
                         </div>
                     </fieldset>
@@ -163,7 +214,10 @@
             </main>
             <footer class="footer__container">
                 <p class="footer__copyright">Awesome profile-cards @2019</p>
-                <div class="footer__logo-container"> <a href="https://adalab.es" target="_blank"><img class="footer__logo" src="./assets/images/logo-adalab.png" alt="Adalab Logo"></a>
+                <div class="footer__logo-container">
+                    <img class="footer__logo__group" src="./assets/images/group-logo.png"
+                    alt="Nuestro logo" /> <a href="https://adalab.es" target="_blank"><img class="footer__logo" src="./assets/images/logo-adalab.png"
+                alt="Adalab Logo"></a>
 
                 </div>
             </footer>
