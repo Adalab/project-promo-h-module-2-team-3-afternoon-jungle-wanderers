@@ -14,7 +14,15 @@ const share = document.querySelector('#share');
 const palette1 = document.querySelector('#fieldset__design--palette-1');
 const palette2 = document.querySelector('#fieldset__design--palette-2');
 const palette3 = document.querySelector('#fieldset__design--palette-3');
+const palette4 = document.querySelector('#fieldset__design--palette-4');
+
 let paletteChosen = '';
+
+const font1 = document.querySelector('#fieldset__design--font-1');
+const font2 = document.querySelector('#fieldset__design--font-2');
+const font3 = document.querySelector('#fieldset__design--font-3');
+
+let fontChosen = '';
 
 const inputElements = document.querySelectorAll('.input');
 const userName = document.querySelector('#name');

@@ -14,16 +14,6 @@ function checkFilledInputs() {
   }
   
 }
-/*function checkFilledInputs(){
-  if (nameValidation() === false || jobValidation() ===false || phoneValidation() ===false || emailValidation() === false || userLinkedin.value === '' || userGithub.value === ''|| photoSend === ''){
-    createCardButton.disabled = true;
-    errorMessage.classList.remove('hidden');
-
-  } else {
-    createCardButton.disabled = false;
-    errorMessage.classList.add('hidden');
-  }
-} */
 function sendForm(event) {
   event.preventDefault();
 
@@ -40,6 +30,7 @@ function sendForm(event) {
   //creo json
   const datos = {
     "palette": paletteChosen,
+    "font": fontChosen,
     "name": userName.value,
     "job": userJob.value,
     "phone": userTel.value,

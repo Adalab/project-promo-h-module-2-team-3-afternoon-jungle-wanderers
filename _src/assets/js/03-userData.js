@@ -130,6 +130,7 @@ function phoneValidation() {
 
 function getPersData() {
   getPalette();
+  getFont();
   getName();
   getJob();
   getProfileImage();
@@ -161,12 +162,10 @@ function getJob() {
 
 function getProfileImage() {
   if (localStorage.getItem('image')) {
-    //profileImage.src = localStorage.getItem('image');
     profileImage.style.backgroundImage = `url(${localStorage.getItem('image')})`;
     profilePreview.style.backgroundImage = `url(${localStorage.getItem('image')})`;
   }
   else {
-    //profilePreview.src = defaultImage;
     profileImage.style.backgroundImage = `url(${defaultImage})`;
     profilePreview.style.backgroundImage = `url(${defaultImage})`;
   }
